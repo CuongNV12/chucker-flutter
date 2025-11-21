@@ -168,7 +168,7 @@ class ApiResponse {
     });
 
     if (request != null && request.toString().isNotEmpty) {
-      final encodedBody = request.toString().replaceAll('"', r'\"');
+      final encodedBody = json.encode(request).replaceAll('"', r'\"');
       components.add('-d "$encodedBody"');
     }
 
